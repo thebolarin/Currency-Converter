@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Currency Converter</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <main>
+            <section class="converter">
+                <div class="converter-container">
+                    
+                    <h2>Currency Converter</h2>
+                    <hr>
+                    <p class="note">Based on the exchange rate of European central Bank on <span>17.01.2020</span></p>
+
+                    <div class="converter-box">
+                        <div class="converter-box-item">
+                            <div class="amount">
+                                <p>You Have</p>
+                                <input type="number" id="sourceCurrencyValue">
+                            </div>
+                            <div class="select">
+                                <p>
+                                    <img class="icon" id="sourceCurrencyFlag" src="https://flagcdn.com/us.svg" />
+                                    <span id="sourceCurrencyCode">USD</span>
+                                    <img class="arrow" src="assets/images/chevron-down.svg" />
+                                </p>
+                                <select id="sourceCurrency"></select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="convert-icon" id="swapButton">
+                        <div class="icon">
+                            <img src="assets/images/arrows-left-right.svg" />
+                        </div>
+                      
+                    </div>
+
+                    <div class="converter-box">
+                        <div class="converter-box-item">
+                            <div class="amount">
+                                <p>Converted to</p>
+                                <input type="number" id="destinationCurrencyValue">
+                            </div>
+                            <div class="select">
+                                <p>
+                                    <img class="icon" id="destinationCurrencyFlag" src="https://flagcdn.com/us.svg" />
+                                    <span id="destinationCurrencyCode">USD</span>
+                                    <img class="arrow" src="assets/images/chevron-down.svg" />
+                                </p>
+                                <select id="destinationCurrency"></select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="details">
+                        <h4>
+                            1 <span id="destinationCurrencyConversion"></span> = <span id="conversionValue"></span> <span
+                                id="sourceCurrencyConversion"></span>
+                        </h4>
+                        <h5>
+                            Exchange rate last updated at <span id="timestamp">10:00am GMT +1</span>
+                        </h5>
+                    </div>
+                </div>
+            </section>
+
+            <section class="rate">
+                <h2>Conversion Rates</h2>
+                <hr>
+
+                <div class="rate-body">
+                    <div class="rate-box">
+                        <div class="heading">
+                            <div class="header">
+                                <p>Main currency</p>
+                            </div>
+                            <div class="selected-currency">
+                                <p>
+                                    <img class="icon" id="rateSourceCurrencyFlag" src="https://flagcdn.com/us.svg" />
+                                    <span id="rateSourceCurrencyCode">USD</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="rate-table">
+                        <div class="scrollable">
+                            <!-- <div class="inter"> -->
+                                <table id="rateTableContainer">
+                                </table>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- Script -->
+    <script src="index.js"></script>
+</body>
+
+</html>
