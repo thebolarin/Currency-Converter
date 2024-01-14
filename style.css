@@ -62,19 +62,32 @@ main {
 }
 
 h2 {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 20px;
+    letter-spacing: -1px;
 }
 
 .converter-container .note {
     font-size: 12px;
     padding-top: 20px;
+    font-weight: 700;
+    color: black;
 }
 
 .converter-container .note span {
     font-weight: 700;
 }
 
+.error{
+    margin-top: 10px;
+    font-size: 13px;
+    background: #fecaca;
+    padding: 15px;
+    font-weight: 700;
+    border-radius: 10px;
+    color: #450a0a;
+    display: none;
+}
 
 .converter-box-item {
     margin-top: 25px;
@@ -90,7 +103,7 @@ h2 {
     padding: 15px;
 }
 
-.converter-box-item .amount p {
+.converter-box-item .amount label {
     font-size: 14px;
     font-weight: 500;
     color: #536878;
@@ -118,7 +131,7 @@ h2 {
     position: relative;
 }
 
-.converter-box-item .select p {
+.converter-box-item .select label {
     height: 100%;
     display: flex;
     align-items: center;
@@ -131,12 +144,12 @@ h2 {
     cursor: pointer;
 }
 
-.converter-box-item .select p .icon {
+.converter-box-item .select label .icon {
     width: 30px;
     margin-right: 5px;
 }
 
-.converter-box-item .select p .arrow {
+.converter-box-item .select label .arrow {
     width: 15px;
     margin-left: 20px;
 }
@@ -159,7 +172,6 @@ h2 {
 
 .convert-icon .icon:hover{
     box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
-    /* box-shadow: 0px 18px 30px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1); */
 }
 
 .convert-icon .icon {
@@ -275,9 +287,6 @@ table {
     width: auto;
 }
 
-/* .inter{
-    overflow-x: scroll;
-} */
 th {
     font-size: 12px;
     font-weight: 400;
@@ -337,42 +346,6 @@ tr {
         }
     }
 }
-
-/* .scrollable {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-
-    &.is-scrollable:after {
-        position: absolute;
-        top: 0;
-        left: 100%;
-        width: 50px;
-        height: 100%;
-        border-radius: 10px 0 0 10px / 50% 0 0 50%;
-        box-shadow: -5px 0 10px rgba(0, 0, 0, 0.25);
-        content: '';
-    }
-
-    > div {
-        overflow-x: auto;
-    }
-
-    > div::-webkit-scrollbar {
-        height: 12px;
-    }
-
-    > div::-webkit-scrollbar-track {
-        background: #f0f0f0;
-        box-shadow: 0 0 2px rgba(0, 0, 0, 0.15) inset;
-    }
-
-    > div::-webkit-scrollbar-thumb {
-        background: #ccc;
-        border-radius: 6px;
-    }
-} */
-
 
 @media screen and (max-width: 800px) {
     main {
