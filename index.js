@@ -104,7 +104,6 @@ class CurrencyConverter {
             return {
                 currency: currency,
                 rate: this.sourceCurrencyRates[currency.toLowerCase()].rate.toFixed(3),
-                // inverseRate: this.sourceCurrencyRates[currency.toLowerCase()].inverseRate,
                 date: new Date(this.sourceCurrencyRates[currency.toLowerCase()].date.toLocaleString("en-US", { timeZone: "Europe/London" })).toLocaleString()
             };
         });
