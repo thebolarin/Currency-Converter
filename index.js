@@ -22,7 +22,8 @@ class CurrencyConverter {
 
     rateTableContainerEl = document.getElementById("rateTableContainer");
 
-    errorBanner = document.getElementById("errorBanner");
+    upperLimitErrorBannerEl = document.getElementById("upperLimitErrorBanner");
+    lowerLimitErrorBannerEl = document.getElementById("lowerLimitErrorBanner");
 
     constructor() {
         this.fetchCountryList();
@@ -141,14 +142,21 @@ class CurrencyConverter {
     }
 
     calculateExchangeRate(type) {
-       
-        if(this.sourceCurrencyValueEl.value > 999999 || this.sourceCurrencyValueEl.value < 1) {
-            errorBanner.style.display = "block";
+        if(this.sourceCurrencyValueEl.value > 999999) {
+            this.upperLimitErrorBannerEl.style.display = "block";
             this.destinationCurrencyValueEl.value = null;
             return;
         }
 
-        errorBanner.style.display = "none";
+        if(this.sourceCurrencyValueEl.value < 1) {
+            this.lowerLimitErrorBannerEl.style.display = "block";
+            this.destinationCurrencyValueEl.value = null;
+            return;
+        }
+       
+
+        this.upperLimitErrorBannerEl.style.display = "none";
+        this.lowerLimitErrorBannerEl.style.display = "none";
         
         if (type == 'source') {
             this.destinationCurrencyValueEl.value = (this.sourceCurrencyValueEl.value * this.destinationCurrencyRate.rate).toFixed(3);
